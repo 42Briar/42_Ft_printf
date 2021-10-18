@@ -10,7 +10,7 @@
 	d/i	 int
 	u    unsigned int
 	x/X	 number in hex(lcase/upcase)
-	%	percent sign
+	%	 percent sign
 
 */
 

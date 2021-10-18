@@ -4,8 +4,8 @@ int printunint(long long n)
 {
 	
 	unsigned long long	num;
-	int				count;
-	char			c;
+	int					count;
+	char				c;
 
 	count = 0;
 	if (n < 0)
