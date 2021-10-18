@@ -34,8 +34,8 @@ int printer(const char *str, va_list ap)
 				count += printunint(va_arg(ap, int));
 			else if (*str == 'u')
 				count += printunint(va_arg(ap, unsigned int));
-			// else if (*str == 'x' || *str == 'X')
-				// count += printhex(va_arg(ap, unsigned int), *str);
+			else if (*str == 'x' || *str == 'X')
+				count += printhex(va_arg(ap, unsigned int), *str);
 			else if (*str == '%')
 				count += ft_putchar('%');
 		}
@@ -63,7 +63,8 @@ int ft_printf(const char *str, ...)
 int main()
 {
 	char *str = "aagl;kjdfa";
+	int abc = 123456789;
 
-	ft_printf("%d\n", ft_printf("abc: %%\n"));
-	printf("%d\n", printf("abc: %%\n"));
+	ft_printf("%d\n", ft_printf("abc: %X\n", abc));
+	printf("%d\n", printf("abc: %X\n", abc));
 }

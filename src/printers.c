@@ -37,11 +37,10 @@ int printstring(char *s)
 	return (count);
 }
 
-static int	ft_putnbr_base(unsigned long long nbr)
+static int	ft_putnbr_base(unsigned long long nbr, char *base)
 {
 	int				i;
 	int				count;
-	char *base = "0123456789abcdef";
 	unsigned char	output[1000];
 
 	i = 0;
@@ -70,6 +69,14 @@ int printpointer(void* ptr)
 {
 	unsigned long long p = (unsigned long long)ptr;
 
-	return (ft_putnbr_base(p));
+	return (ft_putnbr_base(p, "0123456789abcdef"));
 
+}
+
+int printhex(unsigned int n, char c)
+{
+	if (c == 'x')
+		return(ft_putnbr_base(n, "0123456789abcdef"));
+	else
+		return(ft_putnbr_base(n, "0123456789ABCDEF"));
 }
