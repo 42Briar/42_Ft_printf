@@ -29,7 +29,7 @@ int printer(const char *str, va_list ap)
 			else if (*str == 's')
 				count += printstring(va_arg(ap, char *));
 			else if (*str == 'p')
-				count += printpointer(va_arg(ap, void *));
+				count += printpointer(va_arg(ap, void *)); //fix this
 			else if (*str == 'd' || *str == 'i')
 				count += printunint(va_arg(ap, int));
 			else if (*str == 'u')
@@ -65,6 +65,22 @@ int main()
 	char *str = "aagl;kjdfa";
 	int abc = 123456789;
 
-	ft_printf("%d\n", ft_printf("abc: %X\n", abc));
-	printf("%d\n", printf("abc: %X\n", abc));
+	printf("%d\n", ft_printf("out: %X\n", abc));
+	printf("%d\n", ft_printf("out: %x\n", abc));	
+	printf("%d\n", ft_printf("out: %s\n", str));
+	printf("%d\n", ft_printf("out: %c\n", 'a'));
+	printf("%d\n", ft_printf("out: %d\n", 2147483647));
+	printf("%d\n", ft_printf("out: %d\n", 0));
+	printf("%d\n", ft_printf("out: %i\n", -2147483648));
+	printf("%d\n", ft_printf("out: %p\n", str));
+	printf("%d\n", ft_printf("out: %%\n"));
+	printf("|----------------------------------------|\n");
+	printf("%d\n", printf("out: %X\n", abc));
+	printf("%d\n", printf("out: %x\n", abc));
+	printf("%d\n", printf("out: %s\n", str));
+	printf("%d\n", printf("out: %c\n", 'a'));
+	printf("%d\n", printf("out: %d\n", 2147483647));
+	printf("%d\n", printf("out: %d\n", 0));
+	printf("%d\n", printf("out: %i\n", -2147483648));
+	printf("%d\n", printf("out: %%\n"));
 }
