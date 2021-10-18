@@ -9,6 +9,9 @@ SRCDIR = src
 SRCS := $(shell find $(SRCDIR) -name "*.c")
 OBJ = $(SRC:.c=.o)
 
+RED = \033[0;31m
+GREEN = \033[0;32m
+NONE = \033[0m
 
 
 all: ${NAME}
