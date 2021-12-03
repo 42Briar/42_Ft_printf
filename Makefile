@@ -1,26 +1,19 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRCDIR = src
-
-SRCS := $(shell find $(SRCDIR) -name "*.c")
+SRC = ft_printf.c printers.c utils.c
 OBJ = $(SRC:.c=.o)
 
-RED = \033[0;31m
-GREEN = \033[0;32m
-NONE = \033[0m
+all: $(NAME)
 
-
-all: ${NAME}
-
-${NAME}: 
+$(NAME):
 			${CC} ${FLAGS} -c ${SRC}
 			${AR} ${NAME} ${OBJ}
 			echo 'Archive created, object files created'
-clean:	
+clean:
 			${RM} ${OBJ}
 			echo 'Object files cleaned'
 
@@ -29,3 +22,5 @@ fclean: clean
 			echo 'Archive cleaned'
 
 re: fclean all
+
+.PHONY: all, clean, fclean, re
